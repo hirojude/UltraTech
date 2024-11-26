@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+
+  }
+
+body{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+@keyframes pulse {
+    0% {
+        background-size: 100%;
+    }
+    50% {
+        background-size: 110%; /* Slightly bigger for pulse effect */
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
+/* .home {
+    width: 100%;
+    height: 110vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9)), url('../public/image1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    top: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    animation: pulse 8s infinite ease-in-out;
+} */
+
+/* globals.css */
+.bg-fixed-image {
+    background-image: url('../public/image1.jpg'); /* Update with the correct path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Ensures the image stays fixed when scrolling */
+    /* position: relative; Ensures the overlay works correctly */
+    z-index: 1;
+    animation: pulse 8s infinite ease-in-out;
+  }
+  
+  .bg-overlay {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.945); /* Low opacity overlay */
+    z-index: 2; /* Place the overlay above the image */
+  }
+  
+  .content-wrapper {
+    /* position: relative; */
+    z-index: 3; /* Place the content above the overlay */
+  }
+  
